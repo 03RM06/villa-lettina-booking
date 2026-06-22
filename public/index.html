@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Villa Lettina — Private Resort</title>
+  <meta name="description" content="Villa Lettina — a private resort nestled in nature. Book your stay in our garden rooms, suites, beachfront villa, or family cabin.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ─── Navigation ─────────────────────────────────────────── -->
+  <header class="site-nav" id="site-nav" role="banner">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Villa Lettina — Home">Villa Lettina</a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links" role="list">
+          <li><a href="#rooms">Rooms</a></li>
+          <li><a href="#amenities">Amenities</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="booking.html" class="btn btn-primary btn-sm">Book Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ─── Hero ───────────────────────────────────────────────── -->
+    <section class="hero" aria-label="Welcome to Villa Lettina">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <span class="hero-eyebrow">Welcome to Villa Lettina</span>
+        <h1>Your Private Paradise Awaits</h1>
+        <p class="hero-sub">Nestled in nature, crafted for extraordinary stays.</p>
+        <div class="hero-ctas">
+          <a href="#rooms" class="btn btn-white btn-lg">Explore Our Rooms</a>
+          <a href="booking.html" class="btn btn-primary btn-lg">Book Your Stay</a>
+        </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Discover</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ─── Rooms ───────────────────────────────────────────────── -->
+    <section class="section" id="rooms">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Accommodations</h2>
+          <p>From intimate garden retreats to beachfront villas — every space thoughtfully designed for your comfort.</p>
+        </div>
+        <div class="rooms-grid" id="rooms-grid" aria-live="polite" aria-label="Available accommodations">
+          <!-- Skeleton cards while loading -->
+          <div class="card room-card room-card-skeleton" aria-hidden="true">
+            <div class="room-image skeleton"></div>
+            <div class="room-body">
+              <div class="room-header">
+                <div class="sk-line sk-title skeleton"></div>
+                <div class="sk-badge skeleton"></div>
+              </div>
+              <div class="sk-line sk-desc skeleton"></div>
+              <div class="sk-line sk-desc2 skeleton"></div>
+              <div class="sk-line sk-price skeleton" style="margin-top:16px"></div>
+            </div>
+          </div>
+          <div class="card room-card room-card-skeleton" aria-hidden="true">
+            <div class="room-image skeleton"></div>
+            <div class="room-body">
+              <div class="room-header">
+                <div class="sk-line sk-title skeleton"></div>
+                <div class="sk-badge skeleton"></div>
+              </div>
+              <div class="sk-line sk-desc skeleton"></div>
+              <div class="sk-line sk-desc2 skeleton"></div>
+              <div class="sk-line sk-price skeleton" style="margin-top:16px"></div>
+            </div>
+          </div>
+          <div class="card room-card room-card-skeleton" aria-hidden="true">
+            <div class="room-image skeleton"></div>
+            <div class="room-body">
+              <div class="room-header">
+                <div class="sk-line sk-title skeleton"></div>
+                <div class="sk-badge skeleton"></div>
+              </div>
+              <div class="sk-line sk-desc skeleton"></div>
+              <div class="sk-line sk-desc2 skeleton"></div>
+              <div class="sk-line sk-price skeleton" style="margin-top:16px"></div>
+            </div>
+          </div>
+          <div class="card room-card room-card-skeleton" aria-hidden="true">
+            <div class="room-image skeleton"></div>
+            <div class="room-body">
+              <div class="room-header">
+                <div class="sk-line sk-title skeleton"></div>
+                <div class="sk-badge skeleton"></div>
+              </div>
+              <div class="sk-line sk-desc skeleton"></div>
+              <div class="sk-line sk-desc2 skeleton"></div>
+              <div class="sk-line sk-price skeleton" style="margin-top:16px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Amenities ───────────────────────────────────────────── -->
+    <section class="section" id="amenities">
+      <div class="container">
+        <div class="section-header">
+          <h2>Resort Amenities</h2>
+          <p>Everything you need for a perfect stay — and more.</p>
+        </div>
+        <div class="amenities-grid">
+          <div class="amenity-tile">
+            <div class="icon" aria-hidden="true">🏊</div>
+            <h4>Private Pool</h4>
+            <p>Cool off in our serene resort pool surrounded by tropical gardens.</p>
+          </div>
+          <div class="amenity-tile">
+            <div class="icon" aria-hidden="true">🌿</div>
+            <h4>Tropical Gardens</h4>
+            <p>Lush, manicured landscapes perfect for peaceful morning walks.</p>
+          </div>
+          <div class="amenity-tile">
+            <div class="icon" aria-hidden="true">🍳</div>
+            <h4>Breakfast Included</h4>
+            <p>Start every day with a hearty homemade meal from our kitchen.</p>
+          </div>
+          <div class="amenity-tile">
+            <div class="icon" aria-hidden="true">📶</div>
+            <h4>Free High-Speed WiFi</h4>
+            <p>Stay connected throughout the property with no data limits.</p>
+          </div>
+          <div class="amenity-tile">
+            <div class="icon" aria-hidden="true">🌊</div>
+            <h4>Beach Access</h4>
+            <p>Steps from a pristine private shoreline, yours to enjoy all day.</p>
+          </div>
+          <div class="amenity-tile">
+            <div class="icon" aria-hidden="true">🛁</div>
+            <h4>Luxury Bathrooms</h4>
+            <p>Elegant fixtures and premium toiletries in every accommodation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── About ────────────────────────────────────────────────── -->
+    <section class="section" id="about" style="background:var(--color-surface)">
+      <div class="container">
+        <div class="about-inner">
+          <div class="about-text">
+            <h2>A Sanctuary All Your Own</h2>
+            <p>Villa Lettina is a privately-owned resort property designed for guests who value seclusion, comfort, and the beauty of the natural world. Whether you're a couple seeking a romantic escape or a family making lasting memories, our accommodations are crafted to feel like home — only far, far better.</p>
+            <p>Our team is dedicated to making every visit seamless. From the moment you arrive to the moment you leave, we attend to the details so you can simply be present.</p>
+            <a href="booking.html" class="btn btn-primary" style="margin-top:8px">Reserve Your Stay</a>
+          </div>
+          <div>
+            <div class="map-placeholder" role="img" aria-label="Location map — details to be added">
+              <div class="map-icon" aria-hidden="true">📍</div>
+              <strong>Villa Lettina</strong>
+              <p>Location details available upon booking confirmation.<br>We'll send you directions along with your booking reference.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ──────────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">Villa Lettina</div>
+          <p>A private resort where nature and luxury meet. Every stay is curated for comfort, calm, and connection.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#rooms">Our Rooms</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <address>
+            <a href="mailto:villalettinaph@example.com">villalettinaph@example.com</a><br>
+            +63 XXX XXX XXXX<br><br>
+            Villa Lettina, Philippines
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Villa Lettina. All rights reserved.</span>
+        <span>Booking reference required at check-in &bull; Payment due on arrival</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container" aria-live="polite" aria-label="Notifications"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

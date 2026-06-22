@@ -1,0 +1,74 @@
+/* ─── Confirmation Page ──────────────────────────────────────── */
+.confirmation-main { padding: 40px 0 80px; }
+
+.confirmation-card {
+  max-width: 680px; margin: 0 auto;
+  background: var(--color-surface); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg); overflow: hidden;
+}
+
+.conf-header {
+  background: var(--color-primary); color: #fff;
+  text-align: center; padding: 40px 40px 32px;
+}
+.checkmark-wrap { width: 70px; height: 70px; margin: 0 auto 20px; }
+.checkmark {
+  width: 70px; height: 70px;
+  stroke: var(--color-accent); stroke-width: 3; stroke-miterlimit: 10;
+}
+.checkmark-circle {
+  stroke-dasharray: 166; stroke-dashoffset: 166;
+  animation: strokeCircle .6s ease forwards .1s;
+}
+.checkmark-check {
+  stroke-dasharray: 48; stroke-dashoffset: 48;
+  animation: strokeCheck .4s ease forwards .7s;
+}
+@keyframes strokeCircle { to { stroke-dashoffset: 0; } }
+@keyframes strokeCheck  { to { stroke-dashoffset: 0; } }
+
+.conf-header h1 { color: #fff; font-size: clamp(1.4rem,3vw,2rem); margin-bottom: 8px; }
+.conf-header p  { color: rgba(255,255,255,.8); font-size: .95rem; }
+
+.conf-ref {
+  display: inline-block; margin-top: 18px;
+  padding: 8px 24px; background: rgba(196,150,58,.2);
+  border: 1.5px solid var(--color-accent); border-radius: var(--radius-md);
+  font-family: monospace; font-size: 1.2rem; font-weight: 700;
+  color: var(--color-accent); letter-spacing: 2px;
+}
+
+.conf-body { padding: 32px 40px; }
+
+.conf-section { margin-bottom: 28px; }
+.conf-section h2 { font-size: 1rem; text-transform: uppercase; letter-spacing: .8px; color: var(--color-text-light); margin-bottom: 14px; font-family: var(--font-body); font-weight: 700; border-bottom: 1px solid var(--color-stone-light); padding-bottom: 8px; }
+
+.conf-table { width: 100%; border-collapse: collapse; }
+.conf-table td { padding: 8px 0; font-size: .9rem; vertical-align: top; }
+.conf-table td:first-child { color: var(--color-text-light); width: 40%; }
+.conf-table td:last-child  { font-weight: 700; color: var(--color-text); }
+.conf-table tr.total-row td { border-top: 1px solid var(--color-stone-light); padding-top: 14px; }
+.conf-table tr.total-row td:first-child { font-weight: 700; color: var(--color-text); font-size: 1rem; }
+.conf-table tr.total-row td:last-child  { font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-primary); }
+
+.conf-special { font-style: italic; color: var(--color-text-light); font-size: .9rem; }
+
+.conf-actions {
+  display: flex; gap: 14px; flex-wrap: wrap; padding: 0 40px 32px;
+}
+
+/* ─── Print Styles ───────────────────────────────────────────── */
+@media print {
+  .no-print, .site-header-simple, .site-footer-simple, .conf-actions { display: none !important; }
+  body { background: #fff; }
+  .confirmation-card { box-shadow: none; border: 1px solid #ccc; }
+  .conf-header { background: #1A3A4A !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* ─── Error / Not Found State ─────────────────────────────────── */
+.conf-not-found {
+  text-align: center; padding: 60px 40px;
+}
+.conf-not-found .icon { font-size: 3rem; margin-bottom: 16px; }
+.conf-not-found h2 { color: var(--color-primary); margin-bottom: 12px; }
+.conf-not-found p { color: var(--color-text-light); margin-bottom: 24px; }

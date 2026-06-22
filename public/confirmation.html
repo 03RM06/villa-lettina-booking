@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmation — Villa Lettina</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/confirmation.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header-simple no-print">
+    <div class="container">
+      <a href="index.html" class="logo">Villa Lettina</a>
+      <nav aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a href="booking.html">Book Again</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="confirmation-main">
+    <div class="container">
+      <div class="confirmation-card" id="confirmation-card">
+        <!-- Filled by JS -->
+        <div class="loading-center"><span class="spinner spinner-lg" aria-label="Loading booking details"></span></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer-simple no-print">
+    &copy; 2026 Villa Lettina &bull; Payment due on arrival
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/confirmation.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* ─── Booking Wrapper ────────────────────────────────────────── */
+.booking-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
+
+/* ─── Progress ───────────────────────────────────────────────── */
+.booking-progress { margin-bottom: 48px; }
+.progress-steps {
+  display: flex; align-items: center; justify-content: center; list-style: none;
+}
+.progress-step {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  min-width: 100px;
+}
+.step-num {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: .9rem;
+  background: var(--color-stone-light); color: var(--color-text-light);
+  transition: background var(--transition), color var(--transition);
+}
+.step-label { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--color-text-light); }
+.progress-step.active .step-num  { background: var(--color-accent); color: var(--color-primary-dark); }
+.progress-step.active .step-label { color: var(--color-primary); }
+.progress-step.done   .step-num  { background: var(--color-primary); color: #fff; }
+.progress-step.done   .step-label { color: var(--color-primary); }
+
+.progress-divider { flex: 1; height: 2px; background: var(--color-stone-light); margin: 0 8px; margin-bottom: 28px; }
+
+/* ─── Step Sections ──────────────────────────────────────────── */
+.booking-step { display: none; }
+.booking-step.active { display: block; }
+.step-title { font-size: clamp(1.3rem,3vw,1.8rem); color: var(--color-primary); margin-bottom: 28px; }
+
+/* ─── Step 1: Room Selector ──────────────────────────────────── */
+.form-section-label {
+  font-size: .8rem; font-weight: 700; letter-spacing: .5px;
+  text-transform: uppercase; color: var(--color-text-light); margin-bottom: 12px;
+}
+.room-selector {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px;
+  margin-bottom: 28px;
+}
+.room-option {
+  cursor: pointer; border: 2px solid var(--color-stone-light); border-radius: var(--radius-md);
+  background: var(--color-surface); padding: 16px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  position: relative;
+}
+.room-option:hover { border-color: var(--color-primary); }
+.room-option.selected {
+  border-color: var(--color-accent); box-shadow: 0 0 0 2px var(--color-accent);
+}
+.room-option input[type="radio"] {
+  position: absolute; opacity: 0; width: 0; height: 0;
+}
+.room-option:focus-within { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+.room-option-thumb {
+  aspect-ratio: 16/9; border-radius: var(--radius-sm); overflow: hidden;
+  margin-bottom: 12px; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading); font-size: .9rem; color: rgba(255,255,255,.85);
+}
+.room-option-name   { font-family: var(--font-heading); font-size: 1rem; color: var(--color-primary); margin-bottom: 4px; }
+.room-option-meta   { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
+.room-option-price  { font-weight: 700; color: var(--color-primary); font-size: .95rem; }
+.room-option-guests { font-size: .8rem; color: var(--color-text-light); }
+.check-icon {
+  position: absolute; top: 10px; right: 10px; width: 24px; height: 24px;
+  border-radius: 50%; background: var(--color-accent); display: none;
+  align-items: center; justify-content: center; color: #fff; font-size: .85rem; font-weight: 700;
+}
+.room-option.selected .check-icon { display: flex; }
+
+/* ─── Date + Guest Row ───────────────────────────────────────── */
+.date-guest-row {
+  display: grid; grid-template-columns: 1fr 1fr 160px; gap: 16px; margin-bottom: 24px;
+}
+@media (max-width: 600px) { .date-guest-row { grid-template-columns: 1fr; } }
+
+/* ─── Availability Status ────────────────────────────────────── */
+#availability-status { margin-bottom: 20px; min-height: 40px; }
+.avail-ok {
+  padding: 12px 18px; background: rgba(39,174,96,.1); border: 1px solid rgba(39,174,96,.3);
+  border-radius: var(--radius-sm); color: #175c30; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.avail-err {
+  padding: 12px 18px; background: rgba(192,57,43,.08); border: 1px solid rgba(192,57,43,.3);
+  border-radius: var(--radius-sm); color: var(--color-error); font-weight: 700;
+}
+
+/* ─── Step Actions ───────────────────────────────────────────── */
+.step-actions {
+  display: flex; align-items: center; gap: 16px; margin-top: 32px; flex-wrap: wrap;
+}
+
+/* ─── Step 2 Layout ──────────────────────────────────────────── */
+.step2-layout {
+  display: grid; grid-template-columns: 1fr 360px; gap: 32px; align-items: start;
+}
+@media (max-width: 768px) { .step2-layout { grid-template-columns: 1fr; } }
+
+.optional-tag { font-size: .78rem; font-weight: 400; color: var(--color-text-light); text-transform: none; letter-spacing: 0; }
+
+/* ─── Price Panel ────────────────────────────────────────────── */
+.price-panel {
+  background: var(--color-surface); border: 1.5px solid var(--color-stone-light);
+  border-radius: var(--radius-md); padding: 24px; position: sticky; top: 100px;
+}
+.price-panel h3 { font-size: 1.1rem; color: var(--color-primary); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--color-stone-light); }
+.price-panel-body { margin-bottom: 20px; }
+
+.price-row { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; }
+.price-row .label { font-size: .875rem; color: var(--color-text-light); }
+.price-row .value { font-size: .9rem; font-weight: 700; color: var(--color-text); }
+.price-row.total   { border-top: 1px solid var(--color-stone-light); margin-top: 8px; padding-top: 14px; }
+.price-row.total .label { font-weight: 700; color: var(--color-text); font-size: 1rem; }
+.price-row.total .value { font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-primary); }
+
+/* ─── Step 3: Confirmed ──────────────────────────────────────── */
+.confirmed-content { padding: 20px 0; }
+.checkmark-wrap { width: 80px; height: 80px; margin: 0 auto 28px; }
+.checkmark {
+  width: 80px; height: 80px;
+  stroke: var(--color-success); stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+.checkmark-circle { stroke-dasharray: 166; stroke-dashoffset: 166; animation: strokeCircle .6s ease forwards .1s; }
+.checkmark-check  { stroke-dasharray: 48;  stroke-dashoffset: 48;  animation: strokeCheck  .4s ease forwards .7s; }
+@keyframes strokeCircle { to { stroke-dashoffset: 0; } }
+@keyframes strokeCheck  { to { stroke-dashoffset: 0; } }
+
+.confirmed-sub { color: var(--color-text-light); font-size: 1.05rem; margin-bottom: 24px; }
+
+.booking-ref-badge {
+  display: inline-block; padding: 10px 28px; background: var(--color-primary);
+  color: var(--color-accent); font-family: monospace; font-size: 1.25rem; font-weight: 700;
+  border-radius: var(--radius-md); letter-spacing: 2px; margin-bottom: 28px;
+}
+
+.confirmed-summary {
+  max-width: 420px; margin: 0 auto 28px; text-align: left;
+  background: var(--color-bg); border-radius: var(--radius-md); padding: 20px 24px;
+}
+.confirmed-summary table { width: 100%; border-collapse: collapse; }
+.confirmed-summary td    { padding: 6px 0; font-size: .9rem; vertical-align: top; }
+.confirmed-summary td:first-child { color: var(--color-text-light); width: 46%; }
+.confirmed-summary td:last-child  { font-weight: 700; color: var(--color-text); }

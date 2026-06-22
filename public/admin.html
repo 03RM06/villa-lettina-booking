@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — Villa Lettina</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="admin-header" role="banner">
+    <div class="container">
+      <div class="admin-header-left">
+        <span class="admin-logo">Villa Lettina</span>
+        <span class="admin-badge">Admin</span>
+      </div>
+      <button type="button" class="btn btn-outline btn-sm" id="logout-btn" style="display:none" aria-label="Logout">Logout</button>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Login Card -->
+    <div id="login-section" class="login-wrap">
+      <div class="login-card" role="main" aria-label="Admin login">
+        <div class="login-icon" aria-hidden="true">🔐</div>
+        <h1>Admin Access</h1>
+        <p>Enter your admin key to access the booking dashboard.</p>
+        <form id="login-form" novalidate>
+          <div class="form-group">
+            <label for="admin-key-input">Admin Key</label>
+            <input type="password" id="admin-key-input" autocomplete="current-password" required placeholder="Enter admin key" aria-describedby="login-error">
+          </div>
+          <div id="login-error" class="field-error" role="alert" aria-live="polite"></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-top:8px" id="login-btn">Access Dashboard</button>
+        </form>
+        <p style="margin-top:16px;font-size:.8rem;color:var(--color-text-light)">For staff use only. Contact your administrator if you need access.</p>
+      </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard-section" style="display:none" aria-label="Bookings dashboard">
+      <div class="dashboard-wrapper container">
+
+        <!-- Stats -->
+        <div class="stats-bar" id="stats-bar" aria-label="Booking statistics">
+          <div class="stat-card">
+            <div class="stat-value" id="stat-total">—</div>
+            <div class="stat-label">Total Bookings</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value confirmed" id="stat-confirmed">—</div>
+            <div class="stat-label">Confirmed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value cancelled" id="stat-cancelled">—</div>
+            <div class="stat-label">Cancelled</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value revenue" id="stat-revenue">—</div>
+            <div class="stat-label">Est. Revenue</div>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filter-bar" role="search" aria-label="Filter bookings">
+          <div class="form-group" style="margin:0;flex:1;min-width:180px">
+            <label for="search-input" class="sr-only">Search by name, email, or reference</label>
+            <input type="search" id="search-input" placeholder="Search name, email, or reference…" aria-label="Search bookings">
+          </div>
+          <div class="form-group" style="margin:0">
+            <label for="status-filter" class="sr-only">Filter by status</label>
+            <select id="status-filter" aria-label="Filter by status">
+              <option value="">All Statuses</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-outline" id="search-btn">Search</button>
+          <button type="button" class="btn btn-outline" id="reset-btn">Reset</button>
+        </div>
+
+        <!-- Table -->
+        <div class="table-wrap" role="region" aria-label="Bookings table" tabindex="0">
+          <table class="bookings-table" id="bookings-table">
+            <thead>
+              <tr>
+                <th scope="col">Reference</th>
+                <th scope="col">Guest</th>
+                <th scope="col">Room</th>
+                <th scope="col">Check-in</th>
+                <th scope="col">Check-out</th>
+                <th scope="col">Nights</th>
+                <th scope="col">Guests</th>
+                <th scope="col">Total</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="bookings-tbody">
+              <tr><td colspan="10" class="table-loading"><span class="spinner" aria-label="Loading"></span> Loading bookings…</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="pagination" aria-label="Pagination" role="navigation"></div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <div id="toast-container" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

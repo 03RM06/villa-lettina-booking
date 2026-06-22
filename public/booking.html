@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Stay — Villa Lettina</title>
+  <meta name="description" content="Reserve your room or villa at Villa Lettina. Choose dates, select your accommodation, and confirm your booking.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header-simple">
+    <div class="container">
+      <a href="index.html" class="logo">Villa Lettina</a>
+      <nav aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#rooms">Rooms</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Reserve Your Stay</h1>
+      <p>Complete in 2 easy steps — no payment required today.</p>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <div class="booking-wrapper container">
+
+      <!-- Progress Indicator -->
+      <nav class="booking-progress" aria-label="Booking progress">
+        <ol class="progress-steps">
+          <li class="progress-step active" id="prog-1" aria-current="step">
+            <span class="step-num">1</span>
+            <span class="step-label">Select Stay</span>
+          </li>
+          <li class="progress-divider" aria-hidden="true"></li>
+          <li class="progress-step" id="prog-2">
+            <span class="step-num">2</span>
+            <span class="step-label">Your Details</span>
+          </li>
+          <li class="progress-divider" aria-hidden="true"></li>
+          <li class="progress-step" id="prog-3">
+            <span class="step-num">✓</span>
+            <span class="step-label">Confirmed</span>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Step 1: Select Stay -->
+      <section class="booking-step active" id="step-1" aria-label="Step 1: Select your stay">
+        <h2 class="step-title">Choose Your Room &amp; Dates</h2>
+
+        <div id="room-selector-label" class="form-section-label">Select Accommodation</div>
+        <div id="room-selector" class="room-selector" role="radiogroup" aria-labelledby="room-selector-label">
+          <div class="loading-center"><span class="spinner spinner-lg" aria-label="Loading rooms"></span></div>
+        </div>
+
+        <div class="date-guest-row">
+          <div class="form-group">
+            <label for="check-in">Check-in Date</label>
+            <input type="date" id="check-in" name="check-in" required>
+          </div>
+          <div class="form-group">
+            <label for="check-out">Check-out Date</label>
+            <input type="date" id="check-out" name="check-out" required>
+          </div>
+          <div class="form-group">
+            <label for="num-guests">Guests</label>
+            <select id="num-guests" name="num-guests" required aria-label="Number of guests">
+              <option value="1">1 guest</option>
+              <option value="2" selected>2 guests</option>
+              <option value="3">3 guests</option>
+              <option value="4">4 guests</option>
+              <option value="5">5 guests</option>
+              <option value="6">6 guests</option>
+              <option value="7">7 guests</option>
+              <option value="8">8 guests</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="availability-status" aria-live="polite"></div>
+
+        <div class="step-actions">
+          <button type="button" class="btn btn-outline btn-lg" id="check-availability-btn">
+            Check Availability
+          </button>
+          <button type="button" class="btn btn-primary btn-lg" id="proceed-to-step2-btn" style="display:none">
+            Next: Your Details →
+          </button>
+        </div>
+      </section>
+
+      <!-- Step 2: Guest Details -->
+      <section class="booking-step" id="step-2" aria-label="Step 2: Your details" hidden>
+        <h2 class="step-title">Your Details</h2>
+        <div class="step2-layout">
+          <form id="booking-form" novalidate>
+            <div class="form-group">
+              <label for="guest-name">Full Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="guest-name" name="guest-name" autocomplete="name" required placeholder="e.g. Maria Santos">
+            </div>
+            <div class="form-group">
+              <label for="guest-email">Email Address <span aria-hidden="true">*</span></label>
+              <input type="email" id="guest-email" name="guest-email" autocomplete="email" required placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+              <label for="guest-phone">Phone Number <span class="optional-tag">(optional)</span></label>
+              <input type="tel" id="guest-phone" name="guest-phone" autocomplete="tel" placeholder="+63 XXX XXX XXXX">
+            </div>
+            <div class="form-group">
+              <label for="special-requests">Special Requests <span class="optional-tag">(optional)</span></label>
+              <textarea id="special-requests" name="special-requests" placeholder="Early check-in, dietary requirements, celebrations…"></textarea>
+            </div>
+          </form>
+
+          <aside class="price-panel" aria-label="Booking summary">
+            <h3>Booking Summary</h3>
+            <div class="price-panel-body" id="price-breakdown">
+              <!-- Filled by JS -->
+            </div>
+            <div class="notice-payment" role="note">
+              💳 <strong>Payment Due on Arrival</strong> — No online payment or deposit required.
+            </div>
+          </aside>
+        </div>
+
+        <div class="step-actions">
+          <button type="button" class="btn btn-outline" id="back-to-step1-btn">← Back</button>
+          <button type="button" class="btn btn-primary btn-lg" id="confirm-booking-btn">Confirm Booking</button>
+        </div>
+      </section>
+
+      <!-- Step 3: Confirmed -->
+      <section class="booking-step" id="step-3" aria-label="Booking confirmed" hidden>
+        <div class="confirmed-content text-center">
+          <div class="checkmark-wrap" aria-hidden="true">
+            <svg class="checkmark" viewBox="0 0 52 52" aria-hidden="true">
+              <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+              <path class="checkmark-check" fill="none" d="M14 27l8 8 16-16"/>
+            </svg>
+          </div>
+
+          <h2>Booking Confirmed!</h2>
+          <p class="confirmed-sub">Thank you for choosing Villa Lettina. Your reservation is secured.</p>
+
+          <div class="booking-ref-badge" id="confirmed-ref" aria-live="polite"></div>
+
+          <div class="confirmed-summary" id="confirmed-summary"></div>
+
+          <div class="notice-payment lg" role="note" id="confirmed-payment-notice"></div>
+
+          <div class="step-actions" style="justify-content:center;margin-top:32px">
+            <a href="#" id="view-confirmation-link" class="btn btn-primary btn-lg">View Full Confirmation</a>
+            <a href="index.html" class="btn btn-outline">Back to Home</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer-simple">
+    &copy; 2026 Villa Lettina &bull; Payment due on arrival &bull; No deposit required
+  </footer>
+
+  <div id="toast-container" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
